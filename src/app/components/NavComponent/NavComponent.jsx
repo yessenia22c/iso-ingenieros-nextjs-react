@@ -13,7 +13,7 @@ export const NavComponent = () => {
                   <a href='/' className='text-white'>Inicio</a>
               </li>
               <li>
-                  <a href='#' className='text-white'>Acerca de</a>
+                  <a href='/acerca-de' className='text-white'>Acerca de</a>
               </li>
               <li>
                   <a href='#' className='text-white'>Cursos</a>
