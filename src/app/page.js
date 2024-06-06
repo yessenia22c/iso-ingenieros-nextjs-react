@@ -1,6 +1,7 @@
-import Image from "next/image";
+// import Image from "next/image";
 // import { NavComponent } from "./components/NavComponent/NavComponent.jsx";
-import AppComponent from "./components/AppComponent.jsx";
+import PrincipalNavComponent from "./components/NavComponent/PrincipalNavComponent.jsx";
+import Inicio from "./pages/inicio/page.js";
 
 export default function Home() {
   
@@ -8,7 +9,8 @@ export default function Home() {
 
     <>
     
-      <AppComponent></AppComponent>
+      <PrincipalNavComponent></PrincipalNavComponent>
+      <Inicio></Inicio>
     
     </>
   );
