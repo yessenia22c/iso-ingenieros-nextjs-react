@@ -8,8 +8,6 @@ export default function Home() {
   return (
 
     <>
-    
-      <PrincipalNavComponent></PrincipalNavComponent>
       <Inicio></Inicio>
     
     </>
