@@ -3,7 +3,7 @@ import { CardsComponent } from "../../components/MainComponent/CardsComponent.js
 
 export default function initScriptLoader() {
     return (
-        <main>
+        <div>
         <section >
           <BannerComponent></BannerComponent>
         </section>
@@ -11,6 +11,6 @@ export default function initScriptLoader() {
           <CardsComponent></CardsComponent>
         </section>
   
-      </main>
+      </div>
     )
 }
