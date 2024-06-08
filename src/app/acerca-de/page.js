@@ -4,7 +4,7 @@ import PrincipalNavComponent from "../../components/NavComponent/PrincipalNavCom
 export default function page()  {
   return (
     <>
-    <PrincipalNavComponent />
+    {/* <PrincipalNavComponent /> */}
     <div>page</div>
     </>
   )
