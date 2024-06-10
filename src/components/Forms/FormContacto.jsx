@@ -26,7 +26,7 @@ export const FormContacto = () => {
     const res = await axios.post("/api/contactos", formData);
     formRef.current.reset()
     //console.log(formData);
-    console.log('MENSAJE ENVIADO', res);
+    //console.log('MENSAJE ENVIADO', res);
   };
 
   return (

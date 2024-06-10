@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 
   export async function POST(request) {
     const { nombre, email, telefono, mensaje } = await request.json();
-    console.log(nombre, email, telefono, mensaje);
+    //console.log(nombre, email, telefono, mensaje);
     const mailData = {
       from: process.env.CORREO,
       to: process.env.CORREO,
