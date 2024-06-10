@@ -4,11 +4,11 @@ export const FooterComponent = () => {
   return (
     <div>
         <footer className="w-full bg-gray-800 flex justify-center relative bottom-0 py-2">
-            <div className='w-[1000px]'>
-                <img className='w-[90px] my-4' src="./ISO-INGENIEROS-LOGO.svg " alt="logo iso ingenieros" />
+            <div className='w-[1000px] m-4'>
+                <img className='w-[90px] ' src="./ISO-INGENIEROS-LOGO.svg " alt="logo iso ingenieros" />
                 
                 <p className='text-white my-3'>Los mejores cursos al menor precio</p>
-                <div className='grid grid-flow-col grid-cols-2 text-[15px]'>
+                <div className='grid grid-flow-col grid-cols-2 text-[15px] max-[450px]:grid-rows-2 max-[450px]:justify-center'>
                     <ul className='my-6' >
                         <li >
                             <a href='/' className='text-white hover:text-red-400'>Inicio</a>
