@@ -5,8 +5,8 @@ export default function Contactos () {
   return (
     <>
       <section className="flex justify-center">
-        <div className="w-[1000px]">
-          <section className=" grid grid-flow-row sm:grid-cols-2  justify-center gap-4">
+        <div className="w-[1000px] px-4">
+          <section className="grid grid-flow-row sm:grid-cols-2 justify-center gap-4 py-4">
             <article>
             <h1 className="text-4xl font-semibold my-4">Contáctanos </h1>
             <p className=" ">
