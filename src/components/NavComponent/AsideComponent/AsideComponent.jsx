@@ -17,7 +17,7 @@ export const AsideComponent = ({isHidden, isMinWidth, close}) => {
                 {/* <HeaderCerrarAside cerrarAside = {cerrarAside}></HeaderCerrarAside> */}
                 <div className="flex mx-4 justify-between my-4">
                     <img className='w-[60px] p-0' src="./ISO-INGENIEROS-LOGO.svg" alt="" />
-                    <button onClick={cerrarAside}>
+                    <button className="bg-gray-800 hover:bg-gray-800" onClick={cerrarAside}>
                         <img src="./iconos/close.svg" alt="" />
                     </button>
                 </div>
