@@ -1,85 +1,145 @@
 'use client'
 
 import axios from "axios";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { set, useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+import { AlertCmponent } from "./AlertCmponent";
+//import { useForm } from "./hooks/useForm";
 
+
+// Definir el esquema de validación con Yup
+const schema = yup.object().shape({
+  nombre: yup.string().required('Este campo es obligatorio'),
+  email: yup.string().email('Correo electrónico no válido').required('Este campo es obligatorio'),
+  telefono: yup.string().required('Este campo es obligatorio'),
+  mensaje: yup.string().required('Este campo es obligatorio'),
+});
 export const FormContacto = () => {
 
-  const [formData, setFormData] = useState({
-    nombre: "",
-    email: "",
-    telefono: "",
-    mensaje: "",
+  const { register, handleSubmit, formState: {errors} } = useForm({
+    resolver: yupResolver(schema),
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    //console.log(name, value);
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  }
+  const [enviado, setEnviado] = useState(false)
+  const [mensaje, setMensaje] = useState('')
   const formRef = useRef(null);
-  const handleSubmit =  async(e) => {
-    e.preventDefault();
-    const res = await axios.post("/api/contactos", formData);
+  const onSubmit = async (data) => {
+    console.log(data);
+    const res = await axios.post("/api/contactos", data);
+    if(res){
+      setEnviado(true);
+      setMensaje(res.data.message);
+      setTimeout(() => {
+        setEnviado(false);
+      }, 5000);
+    }
     formRef.current.reset()
-    //console.log(formData);
-    //console.log('MENSAJE ENVIADO', res);
+    // console.log('MENSAJE ENVIADO', res , 'MENSAJE', mensaje);
   };
+  // const { formState, onInputChange, onResetForm } = useForm({
+  //   nombre: '',
+  //   email: '',
+  //   telefono: '',
+  //   mensaje: '',
+  // });
+  // const formRef = useRef(null);
+  // const handleSubmit =  async(e) => {
+  //   e.preventDefault();
+  //   // console.log(formState);
+  //   const res = await axios.post("/api/contactos", formState);
+  //   formRef.current.reset()
+  //   onResetForm();  
+  //   //console.log(formData);
+  //   //console.log('MENSAJE ENVIADO', res);
+  // };
 
   return (
-    <div className=" bg-gradient-to-tr from-red-800 to-[#f5704b] text-white text-[14px] rounded-xl my-2">
-      <form onSubmit={handleSubmit} ref={formRef} className="m-8 appearance-none">
+    <div className=" bg-gradient-to-tr from-gray-800 to-[#073d61] text-white text-[14px] rounded-xl my-2">
+      <form
+        ref={formRef}
+        onSubmit={handleSubmit(onSubmit)}
+        noValidate
+        className="m-8 appearance-none"
+      >
         <div className="flex flex-col ">
-          <label className="my-2" name="nombre">Nombre</label>
+          <label className="my-2" name="nombre">
+            Nombre
+          </label>
           <input
-            
-            className=" text-gray-800 appearance-none outline-none
-             ring-gray-600 border-0 rounded-md p-2 
-             focus:ring-2 focus:ring-inset focus:ring-red-400"
+            className=" text-gray-800 appearance-none outline-none ring-gray-600 border-0 rounded-md p-2 focus:ring-2 focus:ring-inset focus:ring-gray-600"
             type="text"
-            id="nombre"value={formData.nombre}
+            id="nombre"
             name="nombre"
-
-            onChange={handleChange}
+            {...register("nombre", { required: true })}
           />
+          {errors.nombre && (
+            <span className="text-red-500">{errors.nombre.message}</span>
+          )}
         </div>
         <div className="flex flex-col">
-          <label className="my-2" name="email">Correo electrónico</label>
-          <input 
-          value={formData.email}
-          onChange={handleChange}
-          className=" text-gray-800 appearance-none outline-none
-          ring-gray-600 border-0 rounded-md p-2 
-          focus:ring-2 focus:ring-inset focus:ring-red-400"
-           type="email" id="email" name="email" />
+          <label className="my-2" name="email">
+            Correo electrónico
+          </label>
+          <input
+            {...register("email")}
+            className=" text-gray-800 appearance-none outline-none ring-gray-600 border-0 rounded-md p-2 focus:ring-2 focus:ring-inset focus:ring-gray-600"
+            type="email"
+            id="email"
+            name="email"
+          />
+
+          {errors.email && (
+            <span className="text-red-500">{errors.email.message}</span>
+          )}
         </div>
+
         <div className="flex flex-col">
-          <label className="my-2" name="telefono">Telefono</label>
-          <input 
-          value={formData.telefono}
-          onChange={handleChange}
-          placeholder="(xxx) xxx-xx-xxx"
+          <label className="my-2" name="telefono">
+            Telefono
+          </label>
+          <input
+            placeholder="(xxx) xxx-xx-xxx"
             className=" text-gray-800 appearance-none outline-none placeholder:text-gray-300
             ring-gray-600 border-0 rounded-md p-2 
-            focus:ring-2 focus:ring-inset focus:ring-red-400"
-          type="tel" id="telefono" name="telefono" />
+            focus:ring-2 focus:ring-inset focus:ring-gray-600"
+            type="tel"
+            id="telefono"
+            name="telefono"
+            {...register("telefono")}
+          />
+          {errors.telefono && (
+            <span className="text-red-500">{errors.telefono.message}</span>
+          )}
         </div>
         <div className="flex flex-col">
-          <label className="my-2" name="mensaje">Mensaje</label>
-          <textarea 
-          value={formData.mensaje}
-          onChange={handleChange}
-          placeholder="Escribe aquí tu mensaje..."
-          rows={3}
+          <label className="my-2" name="mensaje">
+            Mensaje
+          </label>
+          <textarea
+            placeholder="Escribe aquí tu mensaje..."
+            rows={3}
             className=" text-gray-800 appearance-none outline-none placeholder:text-gray-300
             ring-gray-600 border-0 rounded-md p-2 
-            focus:ring-2 focus:ring-inset focus:ring-red-400"
-          id="mensaje" name="mensaje" />
+            focus:ring-2 focus:ring-inset focus:ring-gray-600"
+            id="mensaje"
+            name="mensaje"
+            {...register("mensaje")}
+          />
+          {errors.mensaje && (
+            <span className="text-red-500">{errors.mensaje.message}</span>
+          )}
         </div>
-        <button className="my-2" type="submit" >Enviar</button>
+        <div className="flex gap-4"> 
+          <button className="my-2" type="submit">
+            Enviar
+          </button>
+          
+            {enviado && <AlertCmponent mensaje={mensaje} />}
+        </div>
+        
+        
       </form>
     </div>
   );
