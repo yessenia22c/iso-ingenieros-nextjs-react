@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 import { NextResponse } from 'next/server';
 const transporter = nodemailer.createTransport({ 
     host: process.env.SERVIDOR_SMTP,
-    port: process.env.PURT_SMTP,
+    port: process.env.PORT_SMTP,
     secure: true,
     auth: {
         user: process.env.CORREO,
