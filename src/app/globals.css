@@ -32,5 +32,5 @@ body {
   }
 }
 button{
-  @apply bg-gray-800 text-white font-bold py-2 px-4 rounded-xl hover:bg-gray-700 ;
+  @apply bg-[#073d61] text-white font-bold py-2 px-4 rounded-xl hover:bg-[#074461] ;
 }
