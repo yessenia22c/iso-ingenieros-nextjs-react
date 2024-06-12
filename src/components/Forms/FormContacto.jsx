@@ -56,19 +56,19 @@ export const FormContacto = () => {
   // };
 
   return (
-    <div className=" bg-gradient-to-tr from-gray-800 to-[#073d61] text-white text-[14px] rounded-xl my-2">
+    <div className=" bg-gradient-to-tr from-gray-800 to-[#073d61] text-white text-[14px] rounded-xl m-2">
       <form
         ref={formRef}
         onSubmit={handleSubmit(onSubmit)}
         noValidate
-        className="m-8 appearance-none"
+        className="sm:m-6 m-4 appearance-none"
       >
         <div className="flex flex-col ">
           <label className="my-2" name="nombre">
             Nombre
           </label>
           <input
-            className=" text-gray-800 appearance-none outline-none ring-gray-600 border-0 rounded-md p-2 focus:ring-2 focus:ring-inset focus:ring-gray-600"
+            className="w-full text-gray-800 appearance-none outline-none ring-gray-600 border-0 rounded-md p-2 focus:ring-2 focus:ring-inset focus:ring-gray-600"
             type="text"
             id="nombre"
             name="nombre"
@@ -84,7 +84,7 @@ export const FormContacto = () => {
           </label>
           <input
             {...register("email")}
-            className=" text-gray-800 appearance-none outline-none ring-gray-600 border-0 rounded-md p-2 focus:ring-2 focus:ring-inset focus:ring-gray-600"
+            className="w-full text-gray-800 appearance-none outline-none ring-gray-600 border-0 rounded-md p-2 focus:ring-2 focus:ring-inset focus:ring-gray-600"
             type="email"
             id="email"
             name="email"
@@ -101,7 +101,7 @@ export const FormContacto = () => {
           </label>
           <input
             placeholder="(xxx) xxx-xx-xxx"
-            className=" text-gray-800 appearance-none outline-none placeholder:text-gray-300
+            className="w-full text-gray-800 appearance-none outline-none placeholder:text-gray-300
             ring-gray-600 border-0 rounded-md p-2 
             focus:ring-2 focus:ring-inset focus:ring-gray-600"
             type="tel"
@@ -120,7 +120,7 @@ export const FormContacto = () => {
           <textarea
             placeholder="Escribe aquí tu mensaje..."
             rows={3}
-            className=" text-gray-800 appearance-none outline-none placeholder:text-gray-300
+            className="w-full text-gray-800 appearance-none outline-none placeholder:text-gray-300
             ring-gray-600 border-0 rounded-md p-2 
             focus:ring-2 focus:ring-inset focus:ring-gray-600"
             id="mensaje"
