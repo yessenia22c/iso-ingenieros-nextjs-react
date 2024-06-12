@@ -34,7 +34,7 @@ function PrincipalNavComponent() {
   }
   return (
     <>
-    <div className=' sm:z-20 w-full flex justify-center bg-red-800 p-2 sticky top-0'>
+    <div className='z-20 w-full flex justify-center bg-red-800 p-2 sticky top-0'>
       <NavComponent></NavComponent>
       <ul className='flex w-full justify-end min-[500px]:hidden '>
         <li >
