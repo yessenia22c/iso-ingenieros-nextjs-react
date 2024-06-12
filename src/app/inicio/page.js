@@ -1,7 +1,7 @@
 import { BannerComponent } from "../../components/MainComponent/BannerComponent.jsx";
 import { CardsComponent } from "../../components/MainComponent/CardsComponent.jsx";
 
-export default function initScriptLoader() {
+export default function Inicio() {
     return (
         <div>
         <section >
