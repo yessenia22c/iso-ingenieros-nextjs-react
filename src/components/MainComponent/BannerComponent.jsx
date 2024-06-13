@@ -1,11 +1,10 @@
 'use client'
 import React from 'react'
-import { FormContacto } from '../Forms/FormContacto'
 import { useRouter } from 'next/navigation'
 
 
 
-export const BannerComponent = () => {
+function BannerComponent  () {
   const router = useRouter()
   const onContact = (e) => {
     e.preventDefault()
@@ -24,3 +23,4 @@ export const BannerComponent = () => {
     
   )
 }
+export default BannerComponent

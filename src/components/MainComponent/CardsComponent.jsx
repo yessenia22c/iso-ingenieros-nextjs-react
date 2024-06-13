@@ -1,5 +1,6 @@
+'use client'
 import React from "react";
-export const CardsComponent = () => {
+function CardsComponent  () {
   return (
     <div className="w-[1000px] m-4 md:grid grid-cols-3 auto-cols-max gap-4">
       <div className=" flex flex-col">
@@ -107,3 +108,5 @@ export const CardsComponent = () => {
     </div>
   );
 };
+
+export default CardsComponent;
