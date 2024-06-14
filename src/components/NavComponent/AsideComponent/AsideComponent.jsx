@@ -1,4 +1,5 @@
  import { useState } from "react";
+ import Link from "next/link";
 // eslint-disable-next-line react/prop-types
 export const AsideComponent = ({isHidden, isMinWidth, close}) => {
     //console.log('VALOR HIDEN ', isHidden +' VALOR MIN WIDTH ', isMinWidth);
@@ -23,16 +24,16 @@ export const AsideComponent = ({isHidden, isMinWidth, close}) => {
                 </div>
                 <ul className='flex flex-col gap-4 p-4'>
                     <li>
-                        <a href='/' className='text-white'>Inicio</a>
+                        <Link href='/' className='text-white'>Inicio</Link>
                     </li>
                     <li>
-                        <a href='/acerca-de' className='text-white'>Acerca de</a>
+                        <Link href='/acerca-de' className='text-white'>Acerca de</Link>
                     </li>
                     <li>
-                        <a href='#' className='text-white'>Cursos</a>
+                        <Link href='https://www.eliteiso.org/cursos' target='_blank'  className='text-white'>Cursos</Link>
                     </li>
                     <li>
-                        <a href='/contactos' className='text-white'>Contactos</a>
+                        <Link href='/contactos' className='text-white'>Contactos</Link>
                     </li>
                 </ul>
             </aside>
