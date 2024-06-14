@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 export const NavComponent = () => {
     
     return (
@@ -10,16 +11,16 @@ export const NavComponent = () => {
                   <img className='w-[90px]' src="./ISO-INGENIEROS-LOGO.svg" alt="" />
               </li>
               <li>
-                  <a href='/' className='text-white'>Inicio</a>
+                  <Link href='/' className='text-white'>Inicio</Link>
               </li>
               <li>
-                  <a href='/acerca-de' className='text-white'>Acerca de</a>
+                  <Link href='/acerca-de' className='text-white'>Acerca de</Link>
               </li>
               <li>
-                  <a href='#' className='text-white'>Cursos</a>
+                  <Link href='https://www.eliteiso.org/cursos' target='_blank' className='text-white'>Cursos</Link>
               </li>
               <li>
-                  <a href='/contactos' className='text-white'>Contactos</a>
+                  <Link href='/contactos' className='text-white'>Contactos</Link>
               </li>
           </ul>
             
