@@ -13,6 +13,9 @@ export const NavComponent = () => {
               <li>
                   <Link href='/' className='text-white'>Inicio</Link>
               </li>
+                <li>
+                    <Link href='/blog' className='text-white'>Blog</Link>
+                </li>
               <li>
                   <Link href='/acerca-de' className='text-white'>Acerca de</Link>
               </li>
