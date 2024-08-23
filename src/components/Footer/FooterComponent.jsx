@@ -5,7 +5,7 @@ export const FooterComponent = () => {
     <div>
         <footer className="w-full bg-gray-800 flex justify-center relative bottom-0 py-2">
             <div className='w-[1000px] m-4'>
-                <img className='w-[90px] ' src="./ISO-INGENIEROS-LOGO.svg " alt="logo iso ingenieros" />
+                <img className='w-[90px] ' src="/img/ISO-INGENIEROS-LOGO.svg " alt="logo iso ingenieros" />
                 
                 <p className='text-white my-3'>Los mejores cursos al menor precio</p>
                 <div className='grid grid-flow-col grid-cols-2 text-[15px] max-[450px]:grid-rows-2 max-[450px]:justify-center'>
