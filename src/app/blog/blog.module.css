@@ -1,0 +1,58 @@
+.contenedor h1 strong{
+    color: rgb(1, 28, 53);
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+.contenedor h2{
+    color: rgb(1, 28, 53);
+    font-size: 25px;
+    font-weight: 700;
+    text-align: start;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.contenedor h3{
+    color: rgb(1, 28, 53);
+    font-size: 22px;
+    text-align: start;
+    margin-top: 30px;
+    margin-bottom: 22px;
+}
+.contenedor h4 strong{
+    color: rgb(1, 28, 53);
+    font-size: 20px;
+    text-align: start;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+
+.contenedor p{
+    color: rgb(1, 28, 53);
+    font-size: 16px;
+    text-align: start;
+    margin-top: 30px;
+}
+
+.contenedor strong{
+    color: rgb(1, 28, 53);
+    font-size: 16px;
+}
+
+.contenedor p strong{
+    color: rgb(1, 28, 53);
+    font-size: 16px;
+    text-align: start;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.contenedor  li{
+    color: rgb(1, 28, 53);
+    font-size: 16px;
+    text-align: start;
+    margin-top: 4px;
+}
